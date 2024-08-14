@@ -88,6 +88,7 @@ public class KeywordService {
 
         // 키워드 이벤트
         for (NotificationEventDto notificationEventDto : notificationEventDtoList) {
+            log.info("키워드 알림 :", notificationEventDto.getContent());
             notificationSender.send("notification", notificationEventDto);
         }
 
