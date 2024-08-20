@@ -5,7 +5,6 @@ import com.example.plantsnsservice.common.exception.ErrorCode;
 import com.example.plantsnsservice.common.handler.ExceptionResponseHandler;
 import com.example.plantsnsservice.service.SnsHashTagMapService;
 import com.example.plantsnsservice.service.SnsPostService;
-import com.example.plantsnsservice.service.SnsPostServiceFacade;
 import com.example.plantsnsservice.vo.request.SnsPostRequestDto;
 import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,8 +38,6 @@ import static org.mockito.BDDMockito.*;
 class SnsPostControllerTest {
     @MockBean
     SnsPostService snsPostService;
-    @MockBean
-    SnsPostServiceFacade snsPostServiceFacade;
     @MockBean
     SnsHashTagMapService snsHashTagMapService;
     @Autowired

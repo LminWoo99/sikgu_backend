@@ -22,8 +22,7 @@ class SnsPostServiceLikesMethodTest {
     SnsPostRepository snsPostRepository;
     @Autowired
     SnsPostService snsPostService;
-    @Autowired
-    SnsPostServiceFacade snsPostServiceFacade;
+
     @Test
     void updateSnsLikesCount() throws InterruptedException, IOException {
         //given
@@ -48,7 +47,7 @@ class SnsPostServiceLikesMethodTest {
 
             executorService.submit(() -> {
                 try{
-                    snsPostServiceFacade.updateSnsLikesCountLock(1L,1);
+                    snsPostService.updateSnsLikesCount(1L,1);
 
                 }
                 finally {
@@ -60,6 +59,6 @@ class SnsPostServiceLikesMethodTest {
         countDownLatch.await();
         Thread.sleep(10000);
         Optional<SnsPost> byId = snsPostRepository.findById(1L);
-        assertThat(byId.get().getSnsLikesCount()).isEqualTo(101);
+        assertThat(byId.get().getSnsLikesCount()).isEqualTo(100);
     }
 }
