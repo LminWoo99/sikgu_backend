@@ -22,12 +22,11 @@ class SnsPostServiceLikesMethodTest {
     SnsPostRepository snsPostRepository;
     @Autowired
     SnsPostService snsPostService;
-    @Autowired
-    SnsPostServiceFacade snsPostServiceFacade;
+
     @Test
     void updateSnsLikesCount() throws InterruptedException, IOException {
         //given
-        int threadCount = 100;
+        int threadCount = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
         Set<String> hashTags = new HashSet<>();
@@ -37,7 +36,7 @@ class SnsPostServiceLikesMethodTest {
                 .id(1L)
                 .snsPostTitle("sns 게시글 테스트")
                 .snsPostContent("테스트")
-                .snsLikesCount(1)
+                .snsLikesCount(0)
                 .snsViewsCount(1)
                 .hashTags(hashTags)
                 .build();
@@ -45,21 +44,19 @@ class SnsPostServiceLikesMethodTest {
         snsPostService.createPost(snsPostRequestDto, files);
         //when
         for (int i = 0; i<threadCount; i++) {
-
+            Integer memberNo = i;
             executorService.submit(() -> {
                 try{
-                    snsPostServiceFacade.updateSnsLikesCountLock(1L,1);
-
+                    snsPostService.updateSnsLikesCount(1L,memberNo);
                 }
                 finally {
                     countDownLatch.countDown();
-
                 }
             });
         }
         countDownLatch.await();
         Thread.sleep(10000);
         Optional<SnsPost> byId = snsPostRepository.findById(1L);
-        assertThat(byId.get().getSnsLikesCount()).isEqualTo(101);
+        assertThat(byId.get().getSnsLikesCount()).isEqualTo(1000);
     }
 }
