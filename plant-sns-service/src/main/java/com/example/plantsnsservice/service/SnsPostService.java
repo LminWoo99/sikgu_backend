@@ -1,5 +1,6 @@
 package com.example.plantsnsservice.service;
 
+import com.example.plantsnsservice.common.aspect.DistributedLock;
 import com.example.plantsnsservice.common.exception.ErrorCode;
 import com.example.plantsnsservice.domain.entity.SnsPost;
 import com.example.plantsnsservice.repository.querydsl.SnsPostRepository;
@@ -155,30 +156,25 @@ public class SnsPostService {
 
     /**
      * 게시글 좋아요 증가 메서드
-     * redis의 분산락을 통한 동시성 제어
-     * 실제락을 거는 시점은 퍼사드 패턴으로 분리하여
-     * 락의 범위가 트랜잭션 범위보다 크게
+     * redis의 분산락을 통한 동시성 제어(AOP로 비즈니스 로직과 공통 관심사 분리)
+     * 실제락을 거는 시점은 락의 범위가 트랜잭션 범위보다 크게
      * 좋아요 중복관리는 redis set 자료구조를 활용
      * @param : Long snsPostId(게시글 번호), Integer memberNo
      * @Transactional 바깥에서 락을 걸어줌
      */
-    @Transactional
+    @DistributedLock(key = "#snsPostId")
     public void updateSnsLikesCount(Long snsPostId, Integer memberNo) {
-
         SnsPost snsPost = snsPostRepository.findById(snsPostId).orElseThrow(ErrorCode::throwSnsPostNotFound);
         String key = "sns_likes:" + snsPostId;
-        //좋아요 중복 관리
-        boolean alreadyLiked = snsLikesCountRepository.isMember(key,memberNo);
 
+        boolean alreadyLiked = snsLikesCountRepository.isMember(key, memberNo);
         if (alreadyLiked) {
-            // 특정 게시글에 특정 유저가 좋아요 누른적이 있을시
             snsLikesCountRepository.decrement(memberNo, snsPostId);
             snsPost.likesCountDown();
         } else {
             snsLikesCountRepository.increment(memberNo, snsPostId);
             snsPost.likesCountUp();
         }
-
         snsPostRepository.save(snsPost);
     }
     @Transactional

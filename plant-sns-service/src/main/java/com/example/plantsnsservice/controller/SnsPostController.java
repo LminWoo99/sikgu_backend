@@ -1,7 +1,6 @@
 package com.example.plantsnsservice.controller;
 
 import com.example.plantsnsservice.service.SnsPostService;
-import com.example.plantsnsservice.service.SnsPostServiceFacade;
 import com.example.plantsnsservice.vo.request.SnsPostRequestDto;
 import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -19,8 +18,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SnsPostController {
     private final SnsPostService snsPostService;
-    private final SnsPostServiceFacade snsPostServiceFacade;
-
     @PostMapping("/snsPosts")
     @Operation(summary = "SNS 게시글 작성", description = "게시글 작성할 수 있는 API")
     public ResponseEntity<Long> createSnsPost(@RequestPart SnsPostRequestDto snsPostRequestDto, @RequestPart("file") List<MultipartFile> files) throws IOException {
@@ -72,9 +69,8 @@ public class SnsPostController {
     @PostMapping("/snsPost/likes/")
     @Operation(summary = "SNS 게시글 좋아요", description = "SNS 게시글 좋아요 기능 API")
     public ResponseEntity<HttpStatus> updateSnsLikesCount(@RequestParam Long id, @RequestParam Integer memberNo) {
-        //lock 범위를 트랜잭션 범위보다 크게 잡기위해 퍼사드 사용
-        snsPostServiceFacade.updateSnsLikesCountLock(id, memberNo);
-
+        //lock 범위를 트랜잭션 범위보다 크게 잡기위해 퍼사드 사용 ==> AOP로 수정
+        snsPostService.updateSnsLikesCount(id, memberNo);
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
 
