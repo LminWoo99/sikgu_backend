@@ -1,8 +1,6 @@
 package com.example.plantpayservice.repository;
 
 import com.example.plantpayservice.domain.entity.Payment;
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

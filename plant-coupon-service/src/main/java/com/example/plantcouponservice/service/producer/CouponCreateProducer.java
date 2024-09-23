@@ -1,6 +1,6 @@
 package com.example.plantcouponservice.service.producer;
 
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;

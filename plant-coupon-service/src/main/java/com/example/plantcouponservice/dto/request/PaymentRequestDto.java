@@ -1,4 +1,4 @@
-package com.example.plantcouponservice.vo.request;
+package com.example.plantcouponservice.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

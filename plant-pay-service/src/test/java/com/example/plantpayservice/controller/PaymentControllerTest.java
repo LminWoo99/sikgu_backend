@@ -1,7 +1,7 @@
 package com.example.plantpayservice.controller;
 
 import com.example.plantpayservice.service.PaymentService;
-import com.example.plantpayservice.vo.response.PaymentResponseDto;
+import com.example.plantpayservice.dto.response.PaymentResponseDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;

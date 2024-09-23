@@ -5,8 +5,6 @@ import com.example.plantsnsservice.domain.FileUtils;
 import com.example.plantsnsservice.domain.entity.Image;
 import com.example.plantsnsservice.domain.entity.SnsPost;
 import com.example.plantsnsservice.repository.ImageRepository;
-import com.example.plantsnsservice.service.SnsPostService;
-import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

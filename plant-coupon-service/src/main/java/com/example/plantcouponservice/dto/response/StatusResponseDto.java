@@ -1,10 +1,9 @@
-package com.example.plantpayservice.vo.response;
+package com.example.plantcouponservice.dto.response;
 
-import com.example.plantpayservice.domain.entity.Payment;
+import com.example.plantcouponservice.domain.Coupon;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.apache.kafka.common.metrics.Stat;
 
 @Getter
 @AllArgsConstructor
@@ -20,16 +19,14 @@ public class StatusResponseDto {
     public static StatusResponseDto addStatus(Integer status) {
         return new StatusResponseDto(status);
     }
-    public static StatusResponseDto addStatus(Integer status, Payment data) {
+    public static StatusResponseDto addStatus(Integer status, Coupon data) {
         return new StatusResponseDto(status, data);
     }
 
     public static StatusResponseDto success(){
         return new StatusResponseDto(200);
     }
-    public static StatusResponseDto failedIdempotency() {
-        return new StatusResponseDto(409);
+    public static StatusResponseDto success(Object data){
+        return new StatusResponseDto(200, data);
     }
-
-
 }

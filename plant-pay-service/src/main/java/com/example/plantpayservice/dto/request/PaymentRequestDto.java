@@ -1,4 +1,4 @@
-package com.example.plantpayservice.vo.request;
+package com.example.plantpayservice.dto.request;
 
 import com.example.plantpayservice.domain.entity.CouponStatus;
 import lombok.AllArgsConstructor;

@@ -3,7 +3,7 @@ package com.example.plantcouponservice.service;
 import com.example.plantcouponservice.domain.Coupon;
 import com.example.plantcouponservice.domain.CouponStatusEnum;
 import com.example.plantcouponservice.repository.CouponRepository;
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

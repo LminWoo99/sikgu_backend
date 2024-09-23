@@ -1,4 +1,4 @@
-package com.example.plantsnsservice.vo.response;
+package com.example.plantsnsservice.dto.response;
 
 import com.example.plantsnsservice.domain.entity.SnsComment;
 import com.sun.istack.NotNull;

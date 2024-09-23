@@ -1,7 +1,5 @@
-package com.example.plantsnsservice.vo;
+package com.example.plantsnsservice.dto;
 
-import com.querydsl.core.types.Order;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter

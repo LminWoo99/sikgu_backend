@@ -1,7 +1,7 @@
 package com.example.plantsnsservice.repository.querydsl;
 
 
-import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
+import com.example.plantsnsservice.dto.response.SnsPostResponseDto;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
@@ -9,7 +9,6 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ import static com.example.plantsnsservice.domain.entity.QHashTag.hashTag;
 import static com.example.plantsnsservice.domain.entity.QImage.image;
 import static com.example.plantsnsservice.domain.entity.QSnsHashTagMap.snsHashTagMap;
 import static com.example.plantsnsservice.domain.entity.QSnsPost.snsPost;
-import static com.example.plantsnsservice.vo.SearchParam.*;
+import static com.example.plantsnsservice.dto.SearchParam.*;
 import static com.querydsl.core.types.Projections.list;
 
 @RequiredArgsConstructor

@@ -1,6 +1,6 @@
 package com.example.plantsnsservice.service;
 
-import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
+import com.example.plantsnsservice.dto.response.SnsPostResponseDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

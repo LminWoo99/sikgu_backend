@@ -1,8 +1,8 @@
 package com.example.plantsnsservice.controller;
 
 import com.example.plantsnsservice.service.SnsPostService;
-import com.example.plantsnsservice.vo.request.SnsPostRequestDto;
-import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
+import com.example.plantsnsservice.dto.request.SnsPostRequestDto;
+import com.example.plantsnsservice.dto.response.SnsPostResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

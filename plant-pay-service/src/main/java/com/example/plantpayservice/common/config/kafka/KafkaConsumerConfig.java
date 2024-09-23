@@ -1,7 +1,6 @@
 package com.example.plantpayservice.common.config.kafka;
 
 
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;

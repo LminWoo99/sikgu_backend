@@ -1,4 +1,4 @@
-package com.example.plantsnsservice.vo.response;
+package com.example.plantsnsservice.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

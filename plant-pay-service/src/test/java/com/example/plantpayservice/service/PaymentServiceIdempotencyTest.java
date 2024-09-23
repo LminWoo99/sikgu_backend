@@ -3,7 +3,7 @@ package com.example.plantpayservice.service;
 import com.example.plantpayservice.domain.entity.Payment;
 import com.example.plantpayservice.repository.IdempotencyKeyRepository;
 import com.example.plantpayservice.repository.PaymentRepository;
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
+import com.example.plantpayservice.dto.request.PaymentRequestDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

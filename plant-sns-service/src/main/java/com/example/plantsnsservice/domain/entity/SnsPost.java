@@ -1,13 +1,12 @@
 package com.example.plantsnsservice.domain.entity;
 
-import com.example.plantsnsservice.vo.request.SnsPostRequestDto;
+import com.example.plantsnsservice.dto.request.SnsPostRequestDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

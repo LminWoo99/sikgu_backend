@@ -2,7 +2,7 @@ package com.example.plantsnsservice.service;
 
 import com.example.plantsnsservice.domain.entity.SnsPost;
 import com.example.plantsnsservice.repository.querydsl.SnsPostRepository;
-import com.example.plantsnsservice.vo.request.SnsPostRequestDto;
+import com.example.plantsnsservice.dto.request.SnsPostRequestDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,6 @@
 package com.example.plantpayservice.repository;
 
-import com.example.plantpayservice.domain.entity.Payment;
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
+import com.example.plantpayservice.dto.request.PaymentRequestDto;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
