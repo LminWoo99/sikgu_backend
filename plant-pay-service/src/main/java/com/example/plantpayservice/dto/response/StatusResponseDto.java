@@ -1,6 +1,6 @@
-package com.example.plantcouponservice.vo.response;
+package com.example.plantpayservice.dto.response;
 
-import com.example.plantcouponservice.domain.Coupon;
+import com.example.plantpayservice.domain.entity.Payment;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,14 +19,16 @@ public class StatusResponseDto {
     public static StatusResponseDto addStatus(Integer status) {
         return new StatusResponseDto(status);
     }
-    public static StatusResponseDto addStatus(Integer status, Coupon data) {
+    public static StatusResponseDto addStatus(Integer status, Payment data) {
         return new StatusResponseDto(status, data);
     }
 
     public static StatusResponseDto success(){
         return new StatusResponseDto(200);
     }
-    public static StatusResponseDto success(Object data){
-        return new StatusResponseDto(200, data);
+    public static StatusResponseDto failedIdempotency() {
+        return new StatusResponseDto(409);
     }
+
+
 }

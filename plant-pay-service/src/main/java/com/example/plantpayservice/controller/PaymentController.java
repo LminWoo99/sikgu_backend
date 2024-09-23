@@ -1,9 +1,9 @@
 package com.example.plantpayservice.controller;
 
 import com.example.plantpayservice.service.PaymentService;
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
-import com.example.plantpayservice.vo.response.PaymentResponseDto;
-import com.example.plantpayservice.vo.response.StatusResponseDto;
+import com.example.plantpayservice.dto.request.PaymentRequestDto;
+import com.example.plantpayservice.dto.response.PaymentResponseDto;
+import com.example.plantpayservice.dto.response.StatusResponseDto;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.response.IamportResponse;
 import com.siot.IamportRestClient.response.Payment;

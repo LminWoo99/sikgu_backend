@@ -1,7 +1,6 @@
 package com.example.plantsnsservice.repository.querydsl;
 
-import com.example.plantsnsservice.domain.entity.SnsPost;
-import com.example.plantsnsservice.vo.response.SnsPostResponseDto;
+import com.example.plantsnsservice.dto.response.SnsPostResponseDto;
 
 import java.util.List;
 import java.util.Map;

@@ -2,7 +2,7 @@ package com.example.plantpayservice.service.event;
 
 import com.example.plantpayservice.domain.entity.OutboxEvent;
 import com.example.plantpayservice.service.PaymentService;
-import com.example.plantpayservice.vo.request.PaymentRequestDto;
+import com.example.plantpayservice.dto.request.PaymentRequestDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

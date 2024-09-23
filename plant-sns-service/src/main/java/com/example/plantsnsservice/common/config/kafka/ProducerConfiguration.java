@@ -1,7 +1,7 @@
 package com.example.plantsnsservice.common.config.kafka;
 
 
-import com.example.plantsnsservice.vo.request.NotificationEventDto;
+import com.example.plantsnsservice.dto.request.NotificationEventDto;
 import com.google.common.collect.ImmutableMap;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

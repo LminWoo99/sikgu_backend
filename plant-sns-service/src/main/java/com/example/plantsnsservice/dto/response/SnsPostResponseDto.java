@@ -1,14 +1,11 @@
-package com.example.plantsnsservice.vo.response;
+package com.example.plantsnsservice.dto.response;
 
-import com.example.plantsnsservice.domain.entity.Image;
-import com.example.plantsnsservice.domain.entity.SnsPost;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor

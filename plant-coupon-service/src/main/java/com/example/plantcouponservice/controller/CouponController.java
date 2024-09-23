@@ -1,10 +1,10 @@
 package com.example.plantcouponservice.controller;
 
 import com.example.plantcouponservice.service.CouponService;
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
-import com.example.plantcouponservice.vo.request.PaymentRequestDto;
-import com.example.plantcouponservice.vo.response.CouponResponseDto;
-import com.example.plantcouponservice.vo.response.StatusResponseDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.request.PaymentRequestDto;
+import com.example.plantcouponservice.dto.response.CouponResponseDto;
+import com.example.plantcouponservice.dto.response.StatusResponseDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;

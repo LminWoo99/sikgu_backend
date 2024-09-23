@@ -1,4 +1,4 @@
-package com.example.plantpayservice.vo.response;
+package com.example.plantpayservice.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

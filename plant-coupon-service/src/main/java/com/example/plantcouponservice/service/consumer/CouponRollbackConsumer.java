@@ -2,7 +2,7 @@ package com.example.plantcouponservice.service.consumer;
 
 import com.example.plantcouponservice.domain.OutboxEvent;
 import com.example.plantcouponservice.service.CouponService;
-import com.example.plantcouponservice.vo.request.PaymentRequestDto;
+import com.example.plantcouponservice.dto.request.PaymentRequestDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,6 @@
 package com.example.plantsnsservice.service;
 
-import com.example.plantsnsservice.domain.NotifiTypeEnum;
-import com.example.plantsnsservice.vo.request.NotificationEventDto;
+import com.example.plantsnsservice.dto.request.NotificationEventDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.EnableKafka;

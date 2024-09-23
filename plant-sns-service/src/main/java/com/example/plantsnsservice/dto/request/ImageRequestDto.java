@@ -1,6 +1,5 @@
-package com.example.plantsnsservice.vo.request;
+package com.example.plantsnsservice.dto.request;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

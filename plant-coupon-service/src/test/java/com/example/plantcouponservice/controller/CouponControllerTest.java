@@ -1,9 +1,9 @@
 package com.example.plantcouponservice.controller;
 
 import com.example.plantcouponservice.service.CouponService;
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
-import com.example.plantcouponservice.vo.response.CouponResponseDto;
-import com.example.plantcouponservice.vo.response.StatusResponseDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.response.CouponResponseDto;
+import com.example.plantcouponservice.dto.response.StatusResponseDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;

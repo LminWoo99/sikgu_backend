@@ -7,10 +7,9 @@ import com.example.plantcouponservice.repository.CouponCountRepository;
 import com.example.plantcouponservice.repository.CouponRepository;
 import com.example.plantcouponservice.repository.FailedEventRepository;
 import com.example.plantcouponservice.service.producer.CouponCreateProducer;
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

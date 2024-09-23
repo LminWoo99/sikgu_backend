@@ -1,6 +1,5 @@
-package com.example.plantcouponservice.vo.request;
+package com.example.plantcouponservice.dto.request;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

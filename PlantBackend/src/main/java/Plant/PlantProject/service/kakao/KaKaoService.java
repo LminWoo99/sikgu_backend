@@ -112,8 +112,6 @@ public class KaKaoService extends DefaultOAuth2UserService implements UserDetail
                 res+=line;
             }
 
-
-
             JSONParser parser = new JSONParser();
             JSONObject obj = (JSONObject) parser.parse(res);
             JSONObject kakao_account = (JSONObject) obj.get("kakao_account");
@@ -122,18 +120,10 @@ public class KaKaoService extends DefaultOAuth2UserService implements UserDetail
 
             String nickname = properties.get("nickname").toString();
             String email = kakao_account.get("email").toString();
-            String password="1234";
+            String password="dummy";
 
             String username = email;
-            String accessToken=jwtTokenUtil.generateAccessToken(username);
-            String refreshToken=jwtTokenUtil.generateRefreshToken(username);
-            refreshTokenService.saveTokenInfo(username, accessToken, refreshToken);
 
-            result.put("nickname", nickname);
-            result.put("email", email);
-            result.put("access_token", accessToken);
-            result.put("refresh_token", refreshToken);
-            result.put("username", username);
 
             if (!memberRepository.existsByEmail(email)) {
                 // 존재하지 않는 회원인 경우 새로 생성
@@ -143,6 +133,7 @@ public class KaKaoService extends DefaultOAuth2UserService implements UserDetail
                         .password(password)
                         .nickname(nickname)
                         .build();
+                String accessToken = generateAndSaveTokens(result, member);
 
                 member.encryptPassword(passwordEncoder.encode(member.getPassword()), KAKAO);
 
@@ -153,6 +144,9 @@ public class KaKaoService extends DefaultOAuth2UserService implements UserDetail
             } else {
                 // 이미 존재하는 회원이면 그냥 넘어가거나 다른 로직 수행 (예: 로그 작성 등)
                 Member byUsername = memberRepository.findByUsername(username).orElseThrow(ErrorCode::throwMemberNotFound);
+
+                generateAndSaveTokens(result, byUsername);
+
                 result.put("id", byUsername.getId());
                 log.info("Existing member detected with email: {}", email);
             }

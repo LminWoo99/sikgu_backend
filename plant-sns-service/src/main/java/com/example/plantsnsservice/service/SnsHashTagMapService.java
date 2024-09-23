@@ -4,7 +4,7 @@ import com.example.plantsnsservice.domain.entity.HashTag;
 import com.example.plantsnsservice.domain.entity.SnsHashTagMap;
 import com.example.plantsnsservice.domain.entity.SnsPost;
 import com.example.plantsnsservice.repository.SnsHashTagMapRepository;
-import com.example.plantsnsservice.vo.response.SnsHashResponseDto;
+import com.example.plantsnsservice.dto.response.SnsHashResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Slice;

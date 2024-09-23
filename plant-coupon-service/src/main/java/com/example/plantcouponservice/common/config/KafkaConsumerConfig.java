@@ -1,7 +1,7 @@
 package com.example.plantcouponservice.common.config;
 
-import com.example.plantcouponservice.vo.request.CouponRequestDto;
-import com.example.plantcouponservice.vo.request.PaymentRequestDto;
+import com.example.plantcouponservice.dto.request.CouponRequestDto;
+import com.example.plantcouponservice.dto.request.PaymentRequestDto;
 import com.google.common.collect.ImmutableMap;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
